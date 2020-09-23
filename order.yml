@@ -1,0 +1,30 @@
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.yjc.product_service.bean
+spring:
+  datasource:
+    druid:
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+      driver-class-name: com.mysql.jdbc.Driver
+      filters: stat,wall
+      initial-size: 5
+      max-active: 30
+      max-pool-prepared-statement-per-connection-size: 50
+      max-wait: 60000
+      min-evictable-idle-time-millis: 300000
+      min-idle: 5
+      password: root
+      pool-prepared-statements: true
+      stat-view-servlet:
+        login-password: 123
+        login-username: admin
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      url: jdbc:mysql://localhost:3306/microservice?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+      use-global-data-source-stat: true
+      username: root
+      validation-query: SELECT 1 FROM DUAL
+      web-stat-filter:
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
